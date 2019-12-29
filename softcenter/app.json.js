@@ -241,24 +241,14 @@
             "version": "1.3"
         }, 
         {
-            "build_date": "2019-11-01_10:32:06", 
+            "build_date": "2019-12-29_10:05:39", 
             "description": "广告屏蔽大师", 
             "home_url": "Module_adbyby.asp", 
-            "md5": "22ee49ab291b97b0eddff6eb05e3972e", 
+            "md5": "ad5bc1f3c0fdd60888e574778bdfa4c7", 
             "name": "adbyby", 
             "tar_url": "adbyby/adbyby.tar.gz", 
             "title": "adbyby", 
             "version": "1.1"
-        }, 
-        {
-            "build_date": "2019-07-16_22:30:15", 
-            "description": "Intel CPU频率设置", 
-            "home_url": "Module_cpufreq.asp", 
-            "md5": "58c9d683cde4844c5da21ee88dba4a27", 
-            "name": "cpufreq", 
-            "tar_url": "cpufreq/cpufreq.tar.gz", 
-            "title": "CPU频率设置", 
-            "version": "1.0"
         }
     ], 
     "home_url": "https://raw.githubusercontent.com/paldier/softcenter/master", 
