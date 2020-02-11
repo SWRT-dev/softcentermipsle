@@ -1,10 +1,10 @@
 {
     "apps": [
         {
-            "build_date": "2019-11-17_21:44:25", 
+            "build_date": "2020-02-11_11:50:56", 
             "description": "KPR更多规则更舒服！", 
             "home_url": "Module_koolproxyR.asp", 
-            "md5": "bb2c87aed6b7c3580dee839c40fbbd29", 
+            "md5": "40aa1ea63101ce94ae22d54bb87c8f2a", 
             "name": "koolproxyR", 
             "tar_url": "koolproxyR/koolproxyR.tar.gz", 
             "title": "koolproxyR", 
@@ -71,30 +71,30 @@
             "version": "0.3"
         }, 
         {
-            "build_date": "2019-11-17_21:44:20", 
+            "build_date": "2020-02-11_11:49:07", 
             "description": "去广告，没烦恼", 
             "home_url": "Module_koolproxy.asp", 
-            "md5": "4f05bac032ef532ea32a9b35094615df", 
+            "md5": "0c379395a8d6e50beac504f5c96b95ef", 
             "name": "koolproxy", 
             "tar_url": "koolproxy/koolproxy.tar.gz", 
             "title": "koolproxy", 
             "version": "3.8.4.2"
         }, 
         {
-            "build_date": "2019-11-20_13:46:11", 
+            "build_date": "2020-02-11_11:40:02", 
             "description": "linux下载利器", 
             "home_url": "Module_aria2.asp", 
-            "md5": "746406a8ce519ed5c4b3a0a954220300", 
+            "md5": "651fd776fc263cfe8a34ef8d9167995d", 
             "name": "aria2", 
             "tar_url": "aria2/aria2.tar.gz", 
             "title": "Aria2", 
             "version": "2.7"
         }, 
         {
-            "build_date": "2019-11-01_10:45:29", 
+            "build_date": "2020-02-11_12:12:15", 
             "description": "内网穿透利器，谁用谁知道。", 
             "home_url": "Module_frpc.asp", 
-            "md5": "8149a796211cc13ac30a76fbdae53ba2", 
+            "md5": "cc7c3a47946ad1fbf09f633810820a40", 
             "name": "frpc", 
             "tar_url": "frpc/frpc.tar.gz", 
             "title": "frpc穿透", 
@@ -111,10 +111,10 @@
             "version": "2.4"
         }, 
         {
-            "build_date": "2019-07-16_22:31:05", 
+            "build_date": "2020-02-11_12:20:21", 
             "description": "kms", 
             "home_url": "Module_kms.asp", 
-            "md5": "b384571078d996243ec032f0250d5b5d", 
+            "md5": "3cc722adf5d37bf8b34a28a4b15c0c2a", 
             "name": "kms", 
             "tar_url": "kms/kms.tar.gz", 
             "title": "系统工具", 
@@ -131,20 +131,20 @@
             "version": "1.6"
         }, 
         {
-            "build_date": "2019-07-24_11:01:53", 
+            "build_date": "2020-02-11_11:58:15", 
             "description": "dc1服务器", 
             "home_url": "Module_dc1svr.asp", 
-            "md5": "7635fc44e5575ade4bc616ac4293e194", 
+            "md5": "fc6233de39a0cdb3216cafb936ea7016", 
             "name": "dc1svr", 
             "tar_url": "dc1svr/dc1svr.tar.gz", 
             "title": "dc1服务器", 
             "version": "1.1"
         }, 
         {
-            "build_date": "2019-08-12_15:51:28", 
+            "build_date": "2020-02-11_12:25:36", 
             "description": "这是一只自动帮你签到的dog", 
             "home_url": "Module_qiandao.asp", 
-            "md5": "c5a8665924c88480a2b2c98b60ebe9a2", 
+            "md5": "7ab1e09481ba1d00d5b604b1315cf2b6", 
             "name": "qiandao", 
             "tar_url": "qiandao/qiandao.tar.gz", 
             "title": "签到dog", 
@@ -221,30 +221,30 @@
             "version": "4.18.2"
         }, 
         {
-            "build_date": "2019-12-06_23:04:13", 
+            "build_date": "2020-02-11_10:44:26", 
             "description": "百度盘", 
             "home_url": "Module_baidupcs.asp", 
-            "md5": "421bb6ad0864f13878ce066046e7c0ae", 
+            "md5": "338c6042a9a42ffd4cb93e386d14e91d", 
             "name": "baidupcs", 
             "tar_url": "baidupcs/baidupcs.tar.gz", 
             "title": "百度盘", 
             "version": "1.3"
         }, 
         {
-            "build_date": "2019-11-06_12:05:39", 
+            "build_date": "2020-02-10_17:52:24", 
             "description": "从路由器推送状态及通知的工具", 
             "home_url": "Module_serverchan.asp", 
-            "md5": "f453b7262be329f27481d89fdcf812a3", 
+            "md5": "5b3b5569570a3057346e80de6f6790b4", 
             "name": "serverchan", 
             "tar_url": "serverchan/serverchan.tar.gz", 
             "title": "ServerChan微信推送", 
             "version": "1.3"
         }, 
         {
-            "build_date": "2019-12-29_10:05:39", 
+            "build_date": "2020-02-11_10:55:13", 
             "description": "广告屏蔽大师", 
             "home_url": "Module_adbyby.asp", 
-            "md5": "ad5bc1f3c0fdd60888e574778bdfa4c7", 
+            "md5": "c9748c2bb7756075c93b86a965d12f6c", 
             "name": "adbyby", 
             "tar_url": "adbyby/adbyby.tar.gz", 
             "title": "adbyby", 
@@ -252,7 +252,7 @@
         }
     ], 
     "home_url": "https://raw.githubusercontent.com/paldier/softcenter/master", 
-    "md5": "4613ffa20766744a91b6405221646a5c", 
+    "md5": "2961b619a7b548e87a0b1e3837f789ac", 
     "tar_url": "softcenter/softcenter.tar.gz", 
-    "version": "1.2.3"
+    "version": "1.2.4"
 }
