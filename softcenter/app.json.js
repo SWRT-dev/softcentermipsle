@@ -11,14 +11,14 @@
             "version": "1.0.1"
         }, 
         {
-            "build_date": "2020-02-11_11:50:56", 
+            "build_date": "2020-05-22_12:48:23", 
             "description": "KPR更多规则更舒服！", 
             "home_url": "Module_koolproxyR.asp", 
-            "md5": "40aa1ea63101ce94ae22d54bb87c8f2a", 
+            "md5": "c4414677b3a22580501ed9565c263ee4", 
             "name": "koolproxyR", 
             "tar_url": "koolproxyR/koolproxyR.tar.gz", 
             "title": "koolproxyR", 
-            "version": "1.0.1"
+            "version": "1.0.3"
         }, 
         {
             "build_date": "2019-11-17_21:44:40", 
