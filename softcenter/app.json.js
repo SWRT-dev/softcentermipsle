@@ -141,16 +141,6 @@
             "version": "1.7"
         }, 
         {
-            "build_date": "2020-02-11_11:58:15", 
-            "description": "dc1服务器", 
-            "home_url": "Module_dc1svr.asp", 
-            "md5": "fc6233de39a0cdb3216cafb936ea7016", 
-            "name": "dc1svr", 
-            "tar_url": "dc1svr/dc1svr.tar.gz", 
-            "title": "dc1服务器", 
-            "version": "1.1"
-        }, 
-        {
             "build_date": "2020-02-11_19:51:00", 
             "description": "自己的私有云", 
             "home_url": "Module_verysync.asp", 
@@ -262,7 +252,7 @@
         }
     ], 
     "home_url": "https://raw.githubusercontent.com/paldier/softcentermipsle/master", 
-    "md5": "63d9a5d9493eb64836004c283d8b14c0", 
+    "md5": "7256c4b3f1188453096ab0573795ffcb", 
     "tar_url": "softcenter/softcenter.tar.gz", 
-    "version": "1.2.6"
+    "version": "1.2.7"
 }
