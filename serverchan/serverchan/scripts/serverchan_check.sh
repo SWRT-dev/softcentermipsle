@@ -22,14 +22,20 @@ elif [ "$ARCH" == "mipsle" ]; then
 else
 	ARCH_SUFFIX="arm"
 fi
-
+KVER=`uname -r`
+if [ "$KVER" == "4.1.52" -o "$KVER" == "3.14.77" ];then
+	ARCH_SUFFIX="armng"
+fi
+if [ "$KVER" == "3.10.14" ];then
+	ARCH_SUFFIX="mipsle"
+fi
 tcode=`dbus get softcenter_server_tcode`
 if [ "$tcode" == "CN" ]; then
-	scurl="http://update.wifi.com.cn"
+	scurl="https://sc.softcenter.site"
 elif [ "$tcode" == "CN1" ]; then
-	scurl="http://123.56.45.194"
+	scurl="https://sc.softcenter.site"
 elif [ "$tcode" == "ALI" ]; then
-	scurl="http://121.40.153.145"
+	scurl="https://wufan.softcenter.site"
 else
 	scurl="https://sc.paldier.com"
 fi
@@ -67,18 +73,11 @@ restart)
 	echo "###### 本次信息推送：手动推送." > ${serverchan_info_text}
 	;;
 esac
-dnsmasq_pid=`ps | grep "dnsmasq" | grep "nobody" | grep -v grep | awk '{print $1}'`
-kill -12 ${dnsmasq_pid}
-sleep 1
-if [ "$productid" == "BLUECAVE" ];then
-	if [[ ! -f /jffs/softcenter/bin/base64_decode ]];then
-	    cp -rf /jffs/softcenter/bin/base64_encode /jffs/softcenter/bin/base64_decode
-	fi
-else
-	if [[ ! -L /jffs/softcenter/bin/base64_decode ]];then
-	    ln -s /jffs/softcenter/bin/base64_encode /jffs/softcenter/bin/base64_decode
-	fi
+
+if [[ ! -L /jffs/softcenter/bin/base64_decode ]];then
+    ln -s /jffs/softcenter/bin/base64_encode /jffs/softcenter/bin/base64_decode
 fi
+
 send_title=`dbus get serverchan_config_name| base64_decode`
 # 系统运行状态
 if [ "${serverchan_info_system}" == "1" ]; then
@@ -129,6 +128,20 @@ if [[ "${serverchan_info_temp}" == "1" ]]; then
 		interface_2_temperature=`iwpriv ${interface_2} gTemperature | awk '{print $3}'`
 		interface_5_temperature=`iwpriv ${interface_5} gTemperature | awk '{print $3}'`
 		router_cpu_temperature=`cat /sys/kernel/debug/ltq_tempsensor/allsensors | awk '{print $5}' | grep -Eo '[0-9]+' |cut -c1-2 |sed -n '2p'`
+	elif [ "$productid" == "RT-ACRH17" -o "$productid" == "RT-AC82U" ];then
+		interface_2_temperature=`thermaltool -i wifi0 -get |grep temperature | awk '{print $3}'`
+		interface_5_temperature=`thermaltool -i wifi1 -get |grep temperature | awk '{print $3}'`
+		router_cpu_temperature=0
+	elif [ "$productid" == "RT-AC85U" -o "$productid" == "RT-AC85P" ];then
+		interface_2_temperature=0
+		interface_5_temperature=0
+		router_cpu_temperature=0
+	elif [ "$productid" == "RT-AC86U" -o "$productid" == "RT-AC2900" -o "$productid" == "GT-AC2900" -o "$productid" == "GT-AC5300" -o "$productid" == "TUF-AX3000" -o "$productid" == "RT-AX58U" ];then
+		pu_temperature_origin=`cat /sys/class/thermal/thermal_zone0/temp`
+		router_cpu_temperature=`awk 'BEGIN{printf "%.1f\n",('$cpu_temperature_origin'/'1000')}'`
+		interface_2_temperature=`wl -i ${interface_2} phy_tempsense | awk '{print $1}'`
+		interface_5_temperature=`wl -i ${interface_5} phy_tempsense | awk '{print $1}'`
+		[ -n "$interface_52" ] && interface_52_temperature=`wl -i ${interface_52} phy_tempsense | awk '{print $1}'`
 	else
 		interface_2_temperature=`wl -i ${interface_2} phy_tempsense | awk '{print $1}'`
 		interface_5_temperature=`wl -i ${interface_5} phy_tempsense | awk '{print $1}'`
@@ -136,10 +149,13 @@ if [[ "${serverchan_info_temp}" == "1" ]]; then
 		router_cpu_temperature=`cat /proc/dmu/temperature | awk '{print $4}' | grep -Eo '[0-9]+'`
 	fi
     if [ "${interface_2_temperature}" != "" ] || [ "${interface_5_temperature}" != "" ] || [ "${router_cpu_temperature}" != "" ]; then
-	if [ "$productid" != "BLUECAVE" ];then
+	if [ "$productid" != "BLUECAVE" -a "$productid" != "RT-ACRH17" -a "$productid" != "RT-AC85P" ];then
 		interface_2_temperature_c=`expr ${interface_2_temperature} / 2 + 20`
 		interface_5_temperature_c=`expr ${interface_5_temperature} / 2 + 20`
 		[ -n "$interface_52" ] && interface_52_temperature_c=`expr ${interface_52_temperature} / 2 + 20`
+	else
+		interface_2_temperature_c=${interface_2_temperature}
+		interface_5_temperature_c=${interface_5_temperature}
 	fi
 	if [ -n "$interface_52" ];then
 		router_temperature="2.4G: ${interface_2_temperature_c}°C | 5G_1: ${interface_5_temperature_c}°C | 5G_2: ${interface_52_temperature_c}°C | CPU: ${router_cpu_temperature}°C"
@@ -159,7 +175,8 @@ if [[ "${serverchan_info_wan}" == "1" ]]; then
 	router_wan0_proto=`nvram get wan0_proto`
 	router_wan0_ifname=`nvram get wan0_ifname`
 	router_wan0_gw=`nvram get wan0_gw_ifname`
-	router_wan0_public_ip=`curl --interface ${router_wan0_gw} -s https://ip.ngrok.wang 2>&1`
+	router_wan0_ip4=`curl -4 --interface ${router_wan0_gw} -s https://api.ip.sb/ip 2>&1`
+	router_wan0_ip6=`curl -6 --interface ${router_wan0_gw} -s https://api.ip.sb/ip 2>&1`
 	router_wan0_dns1=`nvram get wan0_dns | awk '{print $1}'`
 	router_wan0_dns2=`nvram get wan0_dns | awk '{print $2}'`
 	router_wan0_ip=`nvram get wan0_ipaddr`
@@ -169,7 +186,8 @@ if [[ "${serverchan_info_wan}" == "1" ]]; then
 	echo "#### **网络状态信息:**" >> ${serverchan_info_text}
 	echo "##### **WAN0状态信息:**" >> ${serverchan_info_text}
 	echo "##### 联机类型: ${router_wan0_proto}" >> ${serverchan_info_text}
-	echo "##### 公网 IPv4地址: ${router_wan0_public_ip}" >> ${serverchan_info_text}
+	echo "##### 公网IPv4地址: ${router_wan0_ip4}" >> ${serverchan_info_text}
+	echo "##### 公网IPv6地址: ${router_wan0_ip6}" >> ${serverchan_info_text}
 	echo "##### WAN口IPv4地址: ${router_wan0_ip}" >> ${serverchan_info_text}
 	echo "##### WAN口DNS地址: ${router_wan0_dns1} ${router_wan0_dns2}" >> ${serverchan_info_text}
 	echo "##### WAN口接收流量: ${router_wan0_rx}" >> ${serverchan_info_text}
@@ -179,7 +197,8 @@ if [[ "${serverchan_info_wan}" == "1" ]]; then
 	router_wan1_gw=`nvram get wan1_gw_ifname`
 	if [ -n "${router_wan1_ifname}" ] && [ -n "${router_wan1_gw}" ]; then
 		router_wan1_proto=`nvram get wan1_proto`
-		router_wan1_public_ip=`curl --interface ${router_wan1_gw} -s https://ip.ngrok.wang 2>&1`
+		router_wan1_ip4=`curl -4 --interface ${router_wan1_gw} -s https://api.ip.sb/ip 2>&1`
+		router_wan1_ip6=`curl -6 --interface ${router_wan1_gw} -s https://api.ip.sb/ip 2>&1`
 		router_wan1_dns1=`nvram get wan1_dns | awk '{print $1}'`
 		router_wan1_dns2=`nvram get wan1_dns | awk '{print $2}'`
 		router_wan1_ip=`nvram get wan1_ipaddr`
@@ -187,7 +206,8 @@ if [[ "${serverchan_info_wan}" == "1" ]]; then
 		router_wan1_tx=`ifconfig ${router_wan1_ifname} | grep 'TX bytes' | cut -d\( -f3 | cut -d\) -f1`
 		echo "##### **WAN1状态信息:**" >> ${serverchan_info_text}
 		echo "##### 联机类型: ${router_wan1_proto}" >> ${serverchan_info_text}
-		echo "##### 公网 IPv4地址: ${router_wan1_public_ip}" >> ${serverchan_info_text}
+		echo "##### 公网IPv4地址: ${router_wan1_ip4}" >> ${serverchan_info_text}
+		echo "##### 公网IPv6地址: ${router_wan1_ip6}" >> ${serverchan_info_text}
 		echo "##### WAN口IPv4地址: ${router_wan1_ip}" >> ${serverchan_info_text}
 		echo "##### WAN口DNS地址: ${router_wan1_dns1} ${router_wan1_dns2}" >> ${serverchan_info_text}
 		echo "##### WAN口接收流量: ${router_wan1_rx}" >> ${serverchan_info_text}
@@ -493,7 +513,7 @@ do
 	serverchan_config_sckey=`dbus get serverchan_config_sckey_${nu}`
 	url="https://sc.ftqq.com/${serverchan_config_sckey}.send"
 	result=`wget --no-check-certificate --post-data "text=${serverchan_send_title}&desp=${serverchan_send_content}" -qO- ${url}`
-    if [ "$(echo $result | grep "success")" != "" ];then
+    if [ -n $(echo $result | grep "success") ];then
         [ "${serverchan_info_logger}" == "1" ] && logger "[ServerChan]: 路由器状态信息推送到 SCKEY No.${nu} 成功！"
     else
 	result=`wget --no-check-certificate --post-data "text=${serverchan_send_title}&desp=${serverchan_send_content}" -qO- ${url}`
@@ -504,4 +524,3 @@ do
 	fi
     fi
 done
-
