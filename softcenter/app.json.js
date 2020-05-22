@@ -21,26 +21,6 @@
             "version": "1.0.3"
         }, 
         {
-            "build_date": "2019-11-17_21:44:40", 
-            "description": "科学上网", 
-            "home_url": "Main_Ss_Content.asp", 
-            "md5": "5cf48ecc7f8e056c8e632456e694f0cf", 
-            "name": "shadowsocks", 
-            "tar_url": "shadowsocks/shadowsocks.tar.gz", 
-            "title": "科学上网", 
-            "version": "4.2.0"
-        }, 
-        {
-            "build_date": "2019-07-26_12:00:35", 
-            "description": "超强的SSH网页客户端~", 
-            "home_url": "Module_shellinabox.asp", 
-            "md5": "a36a0a2a9cb5917b2c4ab546ba16f73d", 
-            "name": "shellinabox", 
-            "tar_url": "shellinabox/shellinabox.tar.gz", 
-            "title": "shellinabox", 
-            "version": "2.1"
-        }, 
-        {
             "build_date": "2020-05-22_12:29:10", 
             "description": "Cloudflare解析自动更新IP", 
             "home_url": "Module_cfddns.asp", 
@@ -111,16 +91,6 @@
             "version": "1.8"
         }, 
         {
-            "build_date": "2019-09-21_19:51:44", 
-            "description": "ss-server", 
-            "home_url": "Module_ssserver.asp", 
-            "md5": "6cd7d490feefae45af6e657acbd66ae6", 
-            "name": "ssserver", 
-            "tar_url": "ssserver/ssserver.tar.gz", 
-            "title": "ss-server", 
-            "version": "2.4"
-        }, 
-        {
             "build_date": "2020-05-22_12:38:16", 
             "description": "kms", 
             "home_url": "Module_kms.asp", 
@@ -171,16 +141,6 @@
             "version": "2.1"
         }, 
         {
-            "build_date": "2019-08-16_00:18:09", 
-            "description": "VPN全家桶, ver 4.29 build 9680", 
-            "home_url": "Module_softether.asp", 
-            "md5": "5e353277080f862d9af3aff9b3268263", 
-            "name": "softether", 
-            "tar_url": "softether/softether.tar.gz", 
-            "title": "SoftEther_VPN_Server", 
-            "version": "1.9"
-        }, 
-        {
             "build_date": "2020-05-22_12:48:52", 
             "description": "pppoe单线多拨，带宽提升神器！", 
             "home_url": "Module_mdial.asp", 
@@ -209,16 +169,6 @@
             "tar_url": "ddnspod/ddnspod.tar.gz", 
             "title": "DDnspod", 
             "version": "1.5"
-        }, 
-        {
-            "build_date": "2019-09-26_21:30:51", 
-            "description": "v2ray", 
-            "home_url": "Module_v2ray.asp", 
-            "md5": "330a0623777386d35b233c2b5561011f", 
-            "name": "v2ray", 
-            "tar_url": "v2ray/v2ray.tar.gz", 
-            "title": "v2ray", 
-            "version": "4.18.2"
         }, 
         {
             "build_date": "2020-05-22_12:28:26", 
@@ -252,7 +202,7 @@
         }
     ], 
     "home_url": "https://raw.githubusercontent.com/paldier/softcentermipsle/master", 
-    "md5": "7256c4b3f1188453096ab0573795ffcb", 
+    "md5": "0b1588358a563933ba9ea98b2db3558d", 
     "tar_url": "softcenter/softcenter.tar.gz", 
     "version": "1.2.7"
 }
