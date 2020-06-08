@@ -131,6 +131,16 @@
             "version": "1.6"
         }, 
         {
+            "build_date": "2020-06-06_15:04:47", 
+            "description": "内网穿透利器，谁用谁知道。", 
+            "home_url": "Module_frps.asp", 
+            "md5": "9b62ac99f88ffd9adaa3fbc5f7179829", 
+            "name": "frps", 
+            "tar_url": "frps/frps.tar.gz", 
+            "title": "frps穿透服务器", 
+            "version": "1.5"
+        }, 
+        {
             "build_date": "2020-05-28_09:06:42", 
             "description": "aliddns", 
             "home_url": "Module_aliddns.asp", 
@@ -202,7 +212,7 @@
         }
     ], 
     "home_url": "https://raw.githubusercontent.com/paldier/softcentermipsle/master", 
-    "md5": "0b1588358a563933ba9ea98b2db3558d", 
+    "md5": "6138af8eaf0f074febdb6f1f12c174ef", 
     "tar_url": "softcenter/softcenter.tar.gz", 
-    "version": "1.2.7"
+    "version": "1.2.8"
 }
