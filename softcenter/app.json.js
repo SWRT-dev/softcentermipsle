@@ -1,14 +1,14 @@
 {
     "apps": [
         {
-            "build_date": "2020-05-22_13:02:41", 
+            "build_date": "2020-06-20_21:43:39", 
             "description": "解锁网易云灰色歌曲", 
             "home_url": "Module_unblockmusic.asp", 
-            "md5": "b0a79796f3c1778753a0a50da0c9fa92", 
+            "md5": "06f42eb66641aba1771df9334b07ac0a", 
             "name": "unblockmusic", 
             "tar_url": "unblockmusic/unblockmusic.tar.gz", 
             "title": "解锁网易云灰色歌曲", 
-            "version": "1.0.2"
+            "version": "1.0.3"
         }, 
         {
             "build_date": "2020-05-22_12:48:23", 
@@ -212,7 +212,7 @@
         }
     ], 
     "home_url": "https://raw.githubusercontent.com/paldier/softcentermipsle/master", 
-    "md5": "6138af8eaf0f074febdb6f1f12c174ef", 
+    "md5": "e3eec94e8fb93315ef9a1b9416b3e8bb", 
     "tar_url": "softcenter/softcenter.tar.gz", 
-    "version": "1.2.8"
+    "version": "1.2.9"
 }
