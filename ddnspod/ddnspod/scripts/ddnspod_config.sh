@@ -32,7 +32,7 @@ arDdnsUpdate() {
     local domainID recordID recordRS recordCD myIP errMsg
     # 获得域名ID
     domainID=$(arApiPost "Domain.Info" "domain=${1}")
-    domainID=$(echo $domainID | sed 's/.*{"id":"\([0-9]*\)".*/\1/')
+    domainID=$(echo $domainID | sed 's/.*"id":"\([0-9]*\)".*/\1/')
     # 获得记录ID
     recordID=$(arApiPost "Record.List" "domain_id=${domainID}&sub_domain=${2}")
     recordID=$(echo $recordID | sed 's/.*\[{"id":"\([0-9]*\)".*/\1/')
@@ -95,7 +95,7 @@ add_auto_start(){
 	fi
 }
 # ====================================used by init or cru====================================
-case $1 in
+case $ACTION in
 start)
 	#此处为开机自启动设计
 	if [ "$ddnspod_enable" == "1" ];then

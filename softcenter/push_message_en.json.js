@@ -1,7 +1,7 @@
 {
 "title":"<em>Software Center&nbsp;for&nbsp;mipsle&nbsp;platform</em>",
-"content1":"<b>Software Center: </b>First update the firmware to 5.0.8 or later,<font color='#1E90FF'> then update the software center</font>",
-"content2":"Some plugins download slowly,Refresh the page after 5 minutes",
+"content1":"<b>Software Center: </b>1.3.0,<font color='#1E90FF'> Support api version 1.1 and 1.5</font>",
+"content2":"New firmware 5.1.2 coming soon",
 "content3":"<font color='#1E90FF'>Feedback:&nbsp;&nbsp;</font>\
 <a href='https://github.com/paldier/softcentermipsle' target='_blank'><em>1.GitHub</em></a>&nbsp;&nbsp;&nbsp;&nbsp;\
 <a href='https://t.me/merlinchat' target='_blank'><em>2.Join telegram</em></a>&nbsp;&nbsp;&nbsp;&nbsp;\

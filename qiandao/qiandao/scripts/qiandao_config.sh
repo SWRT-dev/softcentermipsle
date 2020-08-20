@@ -51,7 +51,7 @@ del_cron(){
 	sed -i '/qiandao/d' /var/spool/cron/crontabs/* >/dev/null 2>&1
 }
 
-case $1 in
+case $ACTION in
 start)
 	# 开机启动
 	if [ "$qiandao_enable" == "1" ];then

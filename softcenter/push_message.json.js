@@ -1,7 +1,7 @@
 {
 "title":"<em>软件中心&nbsp;for&nbsp;mipsle&nbsp;platform</em>",
-"content1":"<b>软件中心：</b>务必先更新固件到5.0.8或以上<font color='#1E90FF'>在更新软件中心</font>",
-"content2":"部分插件下载缓慢，5分钟后刷新查看",
+"content1":"软件中心：1.3.0已发布，同时支持api版本1.1和1.5",
+"content2":"固件5.1.2:即将发布,<font color='#1E90FF'>同时支持api版本1.1和1.5</font>",
 "content3":"<font color='#1E90FF'>交流反馈:&nbsp;&nbsp;</font>\
 <a href='https://github.com/paldier/softcentermipsle' target='_blank'><em>1.软件中心GitHub项目</em></a>&nbsp;&nbsp;&nbsp;&nbsp;\
 <a href='https://t.me/merlinchat' target='_blank'><em>2.加入telegram群</em></a>&nbsp;&nbsp;&nbsp;&nbsp;\
