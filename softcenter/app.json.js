@@ -11,16 +11,6 @@
             "version": "1.0.7"
         }, 
         {
-            "build_date": "2020-08-27_17:49:00", 
-            "description": "KPR更多规则更舒服！", 
-            "home_url": "Module_koolproxyR.asp", 
-            "md5": "a1d5b844d9df514458e3ce2b1bf14423", 
-            "name": "koolproxyR", 
-            "tar_url": "koolproxyR/koolproxyR.tar.gz", 
-            "title": "koolproxyR", 
-            "version": "1.0.5"
-        }, 
-        {
             "build_date": "2020-08-20_11:38:35", 
             "description": "Cloudflare解析自动更新IP", 
             "home_url": "Module_cfddns.asp", 
@@ -51,14 +41,14 @@
             "version": "0.4"
         }, 
         {
-            "build_date": "2020-08-20_11:45:13", 
+            "build_date": "2020-09-23_13:30:15", 
             "description": "去广告，没烦恼", 
             "home_url": "Module_koolproxy.asp", 
-            "md5": "76be36f8e63cbb1776b2e4904144fe02", 
+            "md5": "8e937a4cfc8297ff69d8b97b709459a2", 
             "name": "koolproxy", 
             "tar_url": "koolproxy/koolproxy.tar.gz", 
             "title": "koolproxy", 
-            "version": "3.8.4.4"
+            "version": "3.8.5.0"
         }, 
         {
             "build_date": "2020-08-20_11:35:11", 
