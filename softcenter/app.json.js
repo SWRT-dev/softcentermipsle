@@ -11,14 +11,14 @@
             "version": "1.0.7"
         }, 
         {
-            "build_date": "2020-09-30_15:28:01", 
+            "build_date": "2020-11-28_20:35:01", 
             "description": "FileBrowser：您的可视化路由文件管理系统", 
             "home_url": "Module_filebrowser.asp", 
-            "md5": "5304e2392d4f4b676a48b06aab0e3c35", 
+            "md5": "111e2580390d6cc5b5f0ab9222218e2a", 
             "name": "filebrowser", 
             "tar_url": "filebrowser/filebrowser.tar.gz", 
             "title": "filebrowser", 
-            "version": "1.0.2"
+            "version": "1.0.4"
         }, 
         {
             "build_date": "2020-08-20_11:38:35", 
