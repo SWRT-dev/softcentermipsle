@@ -181,6 +181,16 @@
             "version": "3.3"
         }, 
         {
+            "build_date": "2021-01-12_15:11:53", 
+            "description": "node.js", 
+            "home_url": "Module_node.asp", 
+            "md5": "414235b3a29a1073f96a5024cc57d2b7", 
+            "name": "node", 
+            "tar_url": "node/node.tar.gz", 
+            "title": "node.js", 
+            "version": "0.0.2"
+        }, 
+        {
             "build_date": "2020-11-19_18:49:18", 
             "description": "使用Dnspod的ddns服务", 
             "home_url": "Module_ddnspod.asp", 
