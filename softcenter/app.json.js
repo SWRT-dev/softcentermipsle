@@ -131,6 +131,16 @@
             "version": "1.0.1"
         }, 
         {
+            "build_date": "2021-02-04_19:31:11", 
+            "description": "DDNSTO远程控制", 
+            "home_url": "Module_ddnsto.asp", 
+            "md5": "c6f9cd7efaec12b18127c33d7c25c252", 
+            "name": "ddnsto", 
+            "tar_url": "ddnsto/ddnsto.tar.gz", 
+            "title": "DDNSTO远程控制", 
+            "version": "2.9.3"
+        }, 
+        {
             "build_date": "2020-08-20_11:50:46", 
             "description": "这是一只自动帮你签到的dog", 
             "home_url": "Module_qiandao.asp", 
