@@ -4,7 +4,6 @@ source /jffs/softcenter/scripts/base.sh
 sh /jffs/softcenter/scripts/syncthing_config.sh stop
 
 rm -rf /jffs/softcenter/bin/syncthing
-rm -rf /jffs/softcenter/bin/sync
 rm -rf /jffs/softcenter/res/icon-syncthing.png
 rm -rf /jffs/softcenter/scripts/syncthing_*
 rm -rf /jffs/softcenter/webs/Module_syncthing.asp
