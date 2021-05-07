@@ -42,6 +42,7 @@ function get_dbus_data() {
 			E("syncthing_enable").checked = db_syncthing["syncthing_enable"] == "1";
 			E("syncthing_wan_port").value = db_syncthing["syncthing_wan_port"] || "0";
 			E("syncthing_port").value = db_syncthing["syncthing_port"] || "8384";
+			E("syncthing_run_path").value = db_syncthing["syncthing_run_path"] || "/root/.config/syncthing";
 			get_run_status();
 		}
 	});
@@ -54,6 +55,7 @@ function save() {
 	db_syncthing["syncthing_enable"] = E("syncthing_enable").checked ? '1' : '0';
 	db_syncthing["syncthing_wan_port"] = E("syncthing_wan_port").value;
 	db_syncthing["syncthing_port"] = E("syncthing_port").value;
+	db_syncthing["syncthing_run_path"] = E("syncthing_run_path").value;
 	db_syncthing["action_script"]="syncthing_config.sh";
 	db_syncthing["action_mode"] = "restart";
 	$.ajax({
@@ -152,6 +154,14 @@ function open_syncthing(){
 													</td>
 												</tr>
 												<tr id="port_tr">
+													<th width="35%">配置目录</th>
+													<td>
+														<div style="float:left; width:165px; height:25px">
+															<input id="syncthing_run_path" name="syncthing_run_path" class="input_32_table" value="">
+														</div>
+													</td>
+												</tr>
+												<tr id="port_tr">
 													<th width="35%">运行端口</th>
 													<td>
 														<div style="float:left; width:165px; height:25px">
@@ -203,6 +213,7 @@ function open_syncthing(){
 													<h2>使用说明：</h2>
 													<h3>首次安装控制台没有账号密码，为了您的安全请手动设置</h3>
 													<h3>同步目录最好在U盘内(/mnt/file/)创建文件夹 比如 /mnt/file/syncthing/dir1</h3>
+													<h3>配置目录默认为(/root/.config/syncthing),由于Syncthin的数据库会越来越大，最好设定配置目录为硬盘内比如(/mnt/xxx/SyncConfig)</h3>
 													<h3>无必要不要打开外网访问</h3>
 													<h2>作者@沐心 QQ:285169134 Email:a@ph233.cn</h2>
 													<h2>申明：本工具由Git开源项目封装 <a href="https://github.com/syncthing/syncthing" target="_blank">点我跳转</a></h2>

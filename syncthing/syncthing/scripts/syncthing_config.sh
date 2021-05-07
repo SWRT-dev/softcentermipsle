@@ -9,6 +9,7 @@ alias echo_date='echo $(date +%Y年%m月%d日\ %X):'
 echo " " > /tmp/.syncthing.log
 
 [ -z "$syncthing_port" ] && syncthing_port=8384
+[ -z "$syncthing_run_path" ] && syncthing_run_path="/root/.config/syncthing"
 
 auto_start(){
 	if [ "${syncthing_enable}" = "1" ];then
@@ -40,9 +41,8 @@ start_syncthing() {
 	echo_date 开启syncthing主进程！
 	export HOME="/jffs/softcenter/bin/sync"
 	cd /jffs/softcenter/bin
-	syncthing -gui-address="0.0.0.0:$syncthing_port" -logfile="/tmp/syncthing.log" -no-browser >/dev/null &
+	syncthing -gui-address="0.0.0.0:$syncthing_port" -home="$syncthing_run_path" -logfile="/tmp/syncthing.log" -no-browser >/dev/null &
 }
-
 
 case $ACTION in
 
