@@ -31,7 +31,7 @@ def work_paths_by_walk():
             print os.path.join(root,sub)
 
 def work_parent():
-    ignore_paths = frozenset(["maintain_files", "softcenter", "rules", "v2ray_binary", "speedup", "speedtest", "bxc", "uu", "dc1svr", "v2ray", "ssserver", "softether", "shellinabox", "shadowsocks"])
+    ignore_paths = frozenset(["maintain_files", "softcenter", "rules", "v2ray_binary", "speedup", "speedtest", "bxc", "uu", "dc1svr", "v2ray", "ssserver", "softether", "shellinabox", "shadowsocks", "syncthing"])
     for fname in os.listdir(parent_path):
 
         if fname[0] == "." or fname in ignore_paths:
