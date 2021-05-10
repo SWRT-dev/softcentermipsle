@@ -42,7 +42,8 @@ function get_dbus_data() {
 			E("syncthing_enable").checked = db_syncthing["syncthing_enable"] == "1";
 			E("syncthing_wan_port").value = db_syncthing["syncthing_wan_port"] || "0";
 			E("syncthing_port").value = db_syncthing["syncthing_port"] || "8384";
-			E("syncthing_run_path").value = db_syncthing["syncthing_run_path"] || "/root/.config/syncthing";
+			E("syncthing_announce_port").value = db_syncthing["syncthing_announce_port"] || "21027";
+			E("syncthing_run_path").value = db_syncthing["syncthing_run_path"] || "~/.config/syncthing";
 			get_run_status();
 		}
 	});
@@ -129,8 +130,9 @@ function open_syncthing(){
 												<img id="return_btn" onclick="reload_Soft_Center();" align="right" style="cursor:pointer;position:absolute;margin-left:-30px;margin-top:-25px;" title="返回软件中心" src="/images/backprev.png" onMouseOver="this.src='/images/backprevclick.png'" onMouseOut="this.src='/images/backprev.png'"></img>
 											</div>
 											<div style="margin:30px 0 10px 5px;" class="splitLine"></div>
-											<div class="formfontdesc" id="cmdDesc">该工具用于同步数据。</div>
-											<div class="formfontdesc" id="cmdDesc"></div>
+											<div class="formfontdesc" id="cmdDesc">Syncthing用于同步数据，原生支持NAT穿透，通过映射Announce端口可以直接链接提高效率。</div>
+											<div class="formfontdesc" id="cmdDesc">WebGUI 端口可以在本页面直接更改，重启Syncthing后生效</div>
+											<div class="formfontdesc" id="cmdDesc">如需更改Announce端口，需要到WebGUI的“设置-高级-选项”中配置，配置后需要到本页面设置同样的端口号，重启Syncthing后生效</div>
 											<table style="margin:10px 0px 0px 0px;" width="100%" border="1" align="center" cellpadding="4" cellspacing="0" bordercolor="#6b8fa3" class="FormTable" id="syncthing_table">
 												<thead>
 													<tr>
@@ -162,10 +164,18 @@ function open_syncthing(){
 													</td>
 												</tr>
 												<tr id="port_tr">
-													<th width="35%">运行端口</th>
+													<th width="35%">WebGUI 端口</th>
 													<td>
 														<div style="float:left; width:165px; height:25px">
 															<input id="syncthing_port" name="syncthing_port" class="input_32_table" value="">
+														</div>
+													</td>
+												</tr>
+												<tr id="port_tr">
+													<th width="35%">Announce 端口</th>
+													<td>
+														<div style="float:left; width:165px; height:25px">
+															<input id="syncthing_announce_port" name="syncthing_announce_port" class="input_32_table" value="">
 														</div>
 													</td>
 												</tr>
@@ -186,7 +196,7 @@ function open_syncthing(){
 												<table style="margin:-1px 0px 0px 0px;" width="100%" border="1" align="center" cellpadding="4" cellspacing="0" bordercolor="#6b8fa3" class="FormTable">
 													<thead>
 														<tr>
-															<td colspan="2">syncthing相关信息</td>
+															<td colspan="2">Syncthing相关信息</td>
 														</tr>
 													</thead>
 													<tr id="syncthing_status">
@@ -199,7 +209,7 @@ function open_syncthing(){
 														<th style="width:25%;">Syncthing控制台</th>
 														<td>
 															<div style="padding-top:5px;">
-																<span><input class="button_gen" id="cmdBtn" onclick="open_syncthing();" type="button" value="控制台"/></span>
+																<span><input class="button_gen" id="cmdBtn" onclick="open_syncthing();" type="button" value="前往 WebGUI 控制台"/></span>
 															</div>
 														</td>
 													</tr>
@@ -213,9 +223,9 @@ function open_syncthing(){
 													<h2>使用说明：</h2>
 													<h3>首次安装控制台没有账号密码，为了您的安全请手动设置</h3>
 													<h3>同步目录最好在U盘内(/mnt/file/)创建文件夹 比如 /mnt/file/syncthing/dir1</h3>
-													<h3>配置目录默认为(/root/.config/syncthing),由于Syncthin的数据库会越来越大，最好设定配置目录为硬盘内比如(/mnt/xxx/SyncConfig)</h3>
+													<h3>配置目录默认为(~/.config/syncthing),由于Syncthin的数据库会越来越大，首次运行建议一定把配置目录设置为硬盘内比如(/mnt/xxx/SyncConfig)</h3>
 													<h3>无必要不要打开外网访问</h3>
-													<h2>作者@沐心 QQ:285169134 Email:a@ph233.cn</h2>
+													<h2>作者@沐心 QQ:285169134 Email:h@ph233.cn</h2>
 													<h2>申明：本工具由Git开源项目封装 <a href="https://github.com/syncthing/syncthing" target="_blank">点我跳转</a></h2>
 											</div>
 										</td>

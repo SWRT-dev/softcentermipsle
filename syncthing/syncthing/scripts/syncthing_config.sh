@@ -9,7 +9,8 @@ alias echo_date='echo $(date +%Y年%m月%d日\ %X):'
 echo " " > /tmp/.syncthing.log
 
 [ -z "$syncthing_port" ] && syncthing_port=8384
-[ -z "$syncthing_run_path" ] && syncthing_run_path="/root/.config/syncthing"
+[ -z "$syncthing_announce_port" ] && syncthing_announce_port=21027
+[ -z "$syncthing_run_path" ] && syncthing_run_path=~/.config/syncthing
 
 auto_start(){
 	if [ "${syncthing_enable}" = "1" ];then
@@ -24,11 +25,17 @@ auto_start(){
 }
 
 open_ports(){
-	[ "$syncthing_wan_port" == "1" ] && iptables -I INPUT -p tcp --dport $syncthing_port -j ACCEPT >/dev/null 2>&1
+	if [ "$syncthing_wan_port" == "1" ]; then
+		echo_date "开启syncthing WebGUI 端口 ${syncthing_port} 公网访问" >> /tmp/.syncthing.log
+		iptables -I INPUT -p tcp --dport $syncthing_port -j ACCEPT >/dev/null 2>&1
+		echo_date "开启syncthing Announce 端口 ${syncthing_announce_port} 公网访问" >> /tmp/.syncthing.log
+		iptables -I INPUT -p tcp --dport $syncthing_announce_port -j ACCEPT >/dev/null 2>&1
+	fi
 }
 
 close_ports(){
 	iptables -D INPUT -p tcp --dport $syncthing_port -j ACCEPT >/dev/null 2>&1
+	iptables -D INPUT -p tcp --dport $syncthing_announce_port -j ACCEPT >/dev/null 2>&1
 }
 
 stop_syncthing() {
