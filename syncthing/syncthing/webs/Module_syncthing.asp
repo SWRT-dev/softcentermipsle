@@ -56,6 +56,7 @@ function save() {
 	db_syncthing["syncthing_enable"] = E("syncthing_enable").checked ? '1' : '0';
 	db_syncthing["syncthing_wan_port"] = E("syncthing_wan_port").value;
 	db_syncthing["syncthing_port"] = E("syncthing_port").value;
+	db_syncthing["syncthing_announce_port"] = E("syncthing_announce_port").value;
 	db_syncthing["syncthing_run_path"] = E("syncthing_run_path").value;
 	db_syncthing["action_script"]="syncthing_config.sh";
 	db_syncthing["action_mode"] = "restart";
