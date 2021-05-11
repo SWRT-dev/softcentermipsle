@@ -7,10 +7,9 @@ eval `dbus export syncthing_`
 source /jffs/softcenter/scripts/base.sh
 alias echo_date='echo $(date +%Y年%m月%d日\ %X):'
 echo " " > /tmp/.syncthing.log
-
-[ -z "$syncthing_port" ] && syncthing_port=8384
-[ -z "$syncthing_announce_port" ] && syncthing_announce_port=21027
 [ -z "$syncthing_run_path" ] && syncthing_run_path=~/.config/syncthing
+[ -z "$syncthing_port" ] && syncthing_port=8384
+syncthing_announce_port=$(cat $syncthing_run_path/config.xml | grep -o \<localAnnouncePort\>[0-9]*\</localAnnouncePort\> | grep -o [0-9]*)
 
 auto_start(){
 	if [ "${syncthing_enable}" = "1" ];then
@@ -25,7 +24,7 @@ auto_start(){
 }
 
 open_ports(){
-	if [ "$syncthing_wan_port" == "1" ]; then
+	if [ "$syncthing_wan_port" = "1" ]; then
 		echo_date "开启syncthing WebGUI 端口 ${syncthing_port} 公网访问" >> /tmp/.syncthing.log
 		iptables -I INPUT -p tcp --dport $syncthing_port -j ACCEPT >/dev/null 2>&1
 		echo_date "开启syncthing Announce 端口 ${syncthing_announce_port} 公网访问" >> /tmp/.syncthing.log
@@ -60,7 +59,7 @@ stop)
 	stop_syncthing >> /tmp/.syncthing.log
 	;;
 *)
-	if [ "$syncthing_enable" == "1" ]; then
+	if [ "$syncthing_enable" = "1" ]; then
 		echo_date "启动syncthing！" >> /tmp/.syncthing.log
 		auto_start
 		close_ports >> /tmp/.syncthing.log

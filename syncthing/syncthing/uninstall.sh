@@ -8,6 +8,8 @@ rm -rf /jffs/softcenter/res/icon-syncthing.png
 rm -rf /jffs/softcenter/scripts/syncthing_*
 rm -rf /jffs/softcenter/webs/Module_syncthing.asp
 rm -rf /tmp/syncthing.log
+rm -rf /tmp/syncthing_status.log
+rm -rf /tmp/syncthing_disk.log
 
 find /jffs/softcenter/init.d/ -name "*syncthing*" | xargs rm -rf
 # 取消dbus注册 TG sadog
