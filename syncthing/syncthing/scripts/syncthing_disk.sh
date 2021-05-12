@@ -9,15 +9,19 @@ getdirs(){
     eval "$keys=\"treeitems = [\""
     i=0
     backpath=${get_path}
-    for d in $(ls -l $get_path/ | grep -E "^(d|l)" | grep -o -E "[0-9]{1,2}:[0-9]{1,2} +[^ ]+" | grep -o -E "[^ ]+$")
+    fordirs="$get_path/*"
+    for d in $fordirs
     do
-        if [ $i -gt 0 ];then
-            eval "$keys=\"\${$keys} , \""
+        if test -d $d ;then
+            dirname=${d##*/}
+            if [ $i -gt 0 ];then
+                eval "$keys=\"\${$keys} , \""
+            fi
+            eval "backdir$i=\"$dirname\""
+            subnum=$(ls -l $backpath/$dirname/ | grep -E "^(d|l)" | grep -o -E "[0-9]{1,2}:[0-9]{1,2} +" | wc -l)
+            eval "$keys=\"\${$keys} \\\"$dirname#$i#$subnum\\\"\""
+            i=$(($i+1));
         fi
-        eval "backdir$i=\"$d\""
-        subnum=$(ls -l $backpath/$d/ | grep -E "^(d|l)" | grep -o -E "[0-9]{1,2}:[0-9]{1,2} +[^ ]+" | wc -l)
-        eval "$keys=\"\${$keys} \\\"$d#$i#$subnum\\\"\""
-        i=$(($i+1));
     done
      eval "$keys=\"\${$keys} ]\""
 }
@@ -36,8 +40,3 @@ do
 done
 eval ext="\$$keys"
 echo $ext > /tmp/syncthing_disk.log
-
-
-
-
-

@@ -2,7 +2,7 @@
 
 
 MODULE=syncthing
-VERSION="0.5.0"
+VERSION="0.5.1"
 TITLE=syncthing
 DESCRIPTION="syncthing储存同步"
 HOME_URL=Module_syncthing.asp
