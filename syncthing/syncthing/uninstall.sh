@@ -1,22 +1,95 @@
-#!/bin/sh
+// -*- C++ -*-
 
-source /jffs/softcenter/scripts/base.sh
-sh /jffs/softcenter/scripts/syncthing_config.sh stop
+// Copyright (C) 2005, 2006, 2009, 2010 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the terms
+// of the GNU General Public License as published by the Free Software
+// Foundation; either version 3, or (at your option) any later
+// version.
 
-rm -rf /jffs/softcenter/bin/syncthing
-rm -rf /jffs/softcenter/bin/sync
-rm -rf /jffs/softcenter/res/icon-syncthing.png
-rm -rf /jffs/softcenter/scripts/syncthing_*
-rm -rf /jffs/softcenter/webs/Module_syncthing.asp
-rm -rf /tmp/syncthing.log
+// This library is distributed in the hope that it will be useful, but
+// WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// General Public License for more details.
 
-find /jffs/softcenter/init.d/ -name "*syncthing*" | xargs rm -rf
-# 取消dbus注册 TG sadog
-cd /tmp 
-dbus list syncthing|cut -d "=" -f1|sed 's/^/dbus remove /g' > clean.sh
-dbus list softcenter_module_|grep syncthing|cut -d "=" -f1|sed 's/^/dbus remove /g' >> clean.sh
-chmod 777 clean.sh 
-sh ./clean.sh > /dev/null 2>&1 
-rm clean.sh
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
 
-exit 0
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
+
+// Copyright (C) 2004 Ami Tavory and Vladimir Dreizin, IBM-HRL.
+
+// Permission to use, copy, modify, sell, and distribute this software
+// is hereby granted without fee, provided that the above copyright
+// notice appears in all copies, and that both that copyright notice
+// and this permission notice appear in supporting documentation. None
+// of the above authors, nor IBM Haifa Research Laboratories, make any
+// representation about the suitability of this software for any
+// purpose. It is provided "as is" without express or implied
+// warranty.
+
+/**
+ * @file trace_fn_imps.hpp
+ * Contains an implementation class for left_child_next_sibling_heap_.
+ */
+
+#ifdef PB_DS_LC_NS_HEAP_TRACE_
+
+PB_DS_CLASS_T_DEC
+void
+PB_DS_CLASS_C_DEC::
+trace() const
+{
+  std::cerr << std::endl;
+
+  trace_node(m_p_root, 0);
+
+  std::cerr << std::endl;
+}
+
+PB_DS_CLASS_T_DEC
+void
+PB_DS_CLASS_C_DEC::
+trace_node(const_node_pointer p_nd, size_type level)
+{
+  while (p_nd != 0)
+    {
+      for (size_type i = 0; i < level; ++i)
+	std::cerr << ' ';
+
+      std::cerr << p_nd <<
+	" prev = " << p_nd->m_p_prev_or_parent <<
+	" next " << p_nd->m_p_next_sibling <<
+	" left = " << p_nd->m_p_l_child << " ";
+
+      trace_node_metadata(p_nd, type_to_type<node_metadata>());
+
+      std::cerr << p_nd->m_value << std::endl;
+
+      trace_node(p_nd->m_p_l_child, level + 1);
+
+      p_nd = p_nd->m_p_next_sibling;
+    }
+}
+
+PB_DS_CLASS_T_DEC
+template<typename Metadata_>
+void
+PB_DS_CLASS_C_DEC::
+trace_node_metadata(const_node_pointer p_nd, type_to_type<Metadata_>)
+{
+  std::cerr << "(" << p_nd->m_metadata << ") ";
+}
+
+PB_DS_CLASS_T_DEC
+void
+PB_DS_CLASS_C_DEC::
+trace_node_metadata(const_node_pointer, type_to_type<null_left_child_next_sibling_heap_node_metadata>)
+{ }
+
+#endif // #ifdef PB_DS_LC_NS_HEAP_TRACE_

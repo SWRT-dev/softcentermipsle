@@ -1,41 +1,55 @@
-#!/bin/sh
+// -*- C++ -*-
 
-source /jffs/softcenter/scripts/base.sh
-alias echo_date='echo 【$(TZ=UTC-8 date -R +%Y年%m月%d日\ %X)】:'
+// Copyright (C) 2005, 2006, 2008, 2009, 2010 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the terms
+// of the GNU General Public License as published by the Free Software
+// Foundation; either version 3, or (at your option) any later
+// version.
 
-DIR=$(cd $(dirname $0); pwd)
-MODEL=$(nvram get productid)
-if [ "${MODEL:0:3}" == "GT-" ] || [ "$(nvram get merlinr_rog)" == "1" ];then
-	ROG=1
-elif [ "${MODEL:0:3}" == "TUF" ] || [ "$(nvram get merlinr_tuf)" == "1" ];then
-	TUF=1
-fi
-# stop syncthing first
-enable=`dbus get syncthing_enable`
-if [ "$enable" == "1" ];then
-	sh /jffs/softcenter/scripts/syncthing_config.sh stop
-fi
+// This library is distributed in the hope that it will be useful, but
+// WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// General Public License for more details.
 
-# cp files
-cp -rf /tmp/syncthing/scripts/* /jffs/softcenter/scripts/
-cp -rf /tmp/syncthing/bin/* /jffs/softcenter/bin/
-cp -rf /tmp/syncthing/webs/* /jffs/softcenter/webs/
-cp -rf /tmp/syncthing/res/* /jffs/softcenter/res/
-chmod +x /jffs/softcenter/scripts/syncthing*
-chmod +x /jffs/softcenter/bin/syncthing
-dbus set syncthing_version="$(cat $DIR/version)"
-dbus set softcenter_module_syncthing_version="$(cat $DIR/version)"
-dbus set softcenter_module_syncthing_install="1"
-dbus set softcenter_module_syncthing_name="syncthing"
-dbus set softcenter_module_syncthing_title="syncthing储存同步"
-dbus set softcenter_module_syncthing_description="syncthing"
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
 
-# re-enable syncthing
-if [ "$enable" == "1" ];then
-	sh /jffs/softcenter/scripts/syncthing_config.sh start
-fi
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
 
-echo_date "syncthing插件安装完毕！"
-rm -rf /tmp/syncthing* >/dev/null 2>&1
-exit 0
+// Copyright (C) 2004 Ami Tavory and Vladimir Dreizin, IBM-HRL.
 
+// Permission to use, copy, modify, sell, and distribute this software
+// is hereby granted without fee, provided that the above copyright
+// notice appears in all copies, and that both that copyright notice
+// and this permission notice appear in supporting documentation. None
+// of the above authors, nor IBM Haifa Research Laboratories, make any
+// representation about the suitability of this software for any
+// purpose. It is provided "as is" without express or implied
+// warranty.
+
+/**
+ * @file null_metadata.hpp
+ * Contains an implementation struct for this type of heap's node.
+ */
+
+#ifndef PB_DS_LEFT_CHILD_NEXT_SIBLING_HEAP_0_METADATA_HPP
+#define PB_DS_LEFT_CHILD_NEXT_SIBLING_HEAP_0_METADATA_HPP
+
+namespace __gnu_pbds
+{
+  namespace detail
+  {
+
+    struct null_left_child_next_sibling_heap_node_metadata
+    { };
+
+  } // namespace detail
+} // namespace __gnu_pbds
+
+#endif // #ifndef PB_DS_LEFT_CHILD_NEXT_SIBLING_HEAP_0_METADATA_HPP
