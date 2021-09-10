@@ -43,7 +43,7 @@ get_info(){
 		# CFDDNS的A记录ID
 		cfddns_id=`echo $cfddns_result | awk -F"","" '{print $1}' | sed 's/{.*://g' | sed 's/\"//g'`
 		# CFDDNS的A记录IP
-		current_ip=`echo $cfddns_result | awk -F"","" '{print $4}' | grep -oE '([0-9]{1,3}\.?){4}'`
+		current_ip=`echo $cfddns_result | awk -F"","" '{print $6}' | grep -oE '([0-9]{1,3}\.?){4}'`
 		echo_date CloudFlare IP为 $current_ip
 	else
 		dbus set cfddns_status="【$LOGTIME】：获取IPV4解析记录错误！"
