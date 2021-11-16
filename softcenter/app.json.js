@@ -1,6 +1,16 @@
 {
     "apps": [
         {
+            "build_date": "2021-11-16_11:53:05", 
+            "description": "局域网网速测试工具", 
+            "home_url": "Module_speedtest.asp", 
+            "md5": "a274d4cc44259f18dc766b970b62bd63", 
+            "name": "speedtest", 
+            "tar_url": "speedtest/speedtest.tar.gz", 
+            "title": "局域网测速", 
+            "version": "0.0.1"
+        }, 
+        {
             "build_date": "2021-11-06_16:03:18", 
             "description": "解锁网易云灰色歌曲", 
             "home_url": "Module_unblockmusic.asp", 
@@ -231,14 +241,14 @@
             "version": "1.7"
         }, 
         {
-            "build_date": "2021-03-24_21:03:50", 
+            "build_date": "2021-11-16_11:53:22", 
             "description": "从路由器推送状态及通知的工具", 
             "home_url": "Module_serverchan.asp", 
-            "md5": "d21ee2ec53bd771fefc1dff202739b82", 
+            "md5": "65bccac649eca2bb1567d083424a89e6", 
             "name": "serverchan", 
             "tar_url": "serverchan/serverchan.tar.gz", 
             "title": "ServerChan微信推送", 
-            "version": "2.1"
+            "version": "2.2"
         }, 
         {
             "build_date": "2020-08-20_11:32:56", 
@@ -252,7 +262,7 @@
         }
     ], 
     "home_url": "https://raw.githubusercontent.com/paldier/softcentermipsle/master", 
-    "md5": "f6abd55affdd870e6a75c0833597a428", 
+    "md5": "74dcf720b3fc8d8cb755b94b81bc617c", 
     "tar_url": "softcenter/softcenter.tar.gz", 
-    "version": "1.3.9"
+    "version": "1.4.0"
 }
