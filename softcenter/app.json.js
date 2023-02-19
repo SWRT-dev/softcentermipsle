@@ -212,14 +212,15 @@
             "version": "2.3"
         }, 
         {
-            "build_date": "2020-08-20_11:32:56", 
-            "description": "广告屏蔽大师", 
+            "arch": "mipsle", 
+            "build_date": "2023-02-19_17:19:15", 
+            "description": "广告屏蔽大师 Plus 可以全面过滤各种横幅、弹窗、视频广告，同时阻止跟踪、隐私窃取及各种恶意网站", 
             "home_url": "Module_adbyby.asp", 
-            "md5": "21f57c526a559b92059b2f6931dc9026", 
+            "md5": "c10844795492af7c95573fe37c8d6c8c", 
             "name": "adbyby", 
             "tar_url": "adbyby/adbyby.tar.gz", 
-            "title": "adbyby", 
-            "version": "1.2"
+            "title": "广告屏蔽大师 Plus", 
+            "version": "1.3"
         }, 
         {
             "build_date": "2020-08-20_11:41:43", 
