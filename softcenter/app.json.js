@@ -275,14 +275,15 @@
             "version": "2.5"
         }, 
         {
-            "build_date": "2020-11-19_18:49:18", 
+            "arch": "mipsle", 
+            "build_date": "2023-03-18_08:24:34", 
             "description": "使用Dnspod的ddns服务", 
             "home_url": "Module_ddnspod.asp", 
-            "md5": "975ff5992cc61c81bd655aab6d2fd23b", 
+            "md5": "7f60a15c94641233e56e157f82abcb36", 
             "name": "ddnspod", 
             "tar_url": "ddnspod/ddnspod.tar.gz", 
             "title": "DDnspod", 
-            "version": "1.7"
+            "version": "1.8"
         }, 
         {
             "arch": "mipsle", 
