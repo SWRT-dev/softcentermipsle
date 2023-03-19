@@ -1,6 +1,6 @@
 {
 "title":"<em>Software Center&nbsp;for&nbsp;"+db_softcenter_["softcenter_arch"]+"&nbsp;platform</em>",
-"content1":"<b>Software Center: </b>1.4.7,<font color='#1E90FF'>&nbsp;</font>",
+"content1":"<b>Software Center: </b>1.4.7,<font color='#1E90FF'>&nbsp;softcenter dropped support for api1.1</font>",
 "content2":"New firmware 5.2.0 has been released",
 "content3":"<font color='#1E90FF'>Feedback:&nbsp;&nbsp;</font>\
 <a href='https://github.com/SWRT-dev/softcenter' target='_blank'><em>1.GitHub</em></a>&nbsp;&nbsp;&nbsp;&nbsp;\
