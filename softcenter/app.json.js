@@ -203,14 +203,15 @@
             "version": "2.2"
         }, 
         {
-            "build_date": "2020-08-20_11:34:23", 
+            "arch": "mipsle", 
+            "build_date": "2023-04-30_08:25:15", 
             "description": "aliddns", 
             "home_url": "Module_aliddns.asp", 
-            "md5": "8ceb87758fd3c39d65a6a8cdaf786c01", 
+            "md5": "37b312b6da8e7e670e9e652278e9aae3", 
             "name": "aliddns", 
             "tar_url": "aliddns/aliddns.tar.gz", 
             "title": "阿里DDNS", 
-            "version": "2.3"
+            "version": "2.5"
         }, 
         {
             "arch": "mipsle", 
