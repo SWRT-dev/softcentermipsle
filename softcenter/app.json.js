@@ -2,14 +2,14 @@
     "apps": [
         {
             "arch": "mipsle", 
-            "build_date": "2023-02-17_16:49:38", 
+            "build_date": "2023-12-07_07:57:04", 
             "description": "内网穿透利器，谁用谁知道。", 
             "home_url": "Module_frps.asp", 
-            "md5": "a1412b6e849035ea5f9ada4d31b14df8", 
+            "md5": "4386fe979c1c01f3dc8b1e6a00e190e4", 
             "name": "frps", 
             "tar_url": "frps/frps.tar.gz", 
             "title": "frps穿透服务器", 
-            "version": "1.9"
+            "version": "2.0"
         }, 
         {
             "build_date": "2021-03-24_20:16:21", 
@@ -45,14 +45,14 @@
         }, 
         {
             "arch": "mipsle", 
-            "build_date": "2023-02-17_13:23:03", 
+            "build_date": "2023-12-07_08:29:53", 
             "description": "FileBrowser：您的可视化路由文件管理系统", 
             "home_url": "Module_filebrowser.asp", 
-            "md5": "339c9156ee4f24ff055aae8771c3285a", 
+            "md5": "71b37fd4ddf434db6e9cc43d038c7835", 
             "name": "filebrowser", 
             "tar_url": "filebrowser/filebrowser.tar.gz", 
             "title": "filebrowser", 
-            "version": "1.0.5"
+            "version": "1.0.6"
         }, 
         {
             "build_date": "2021-12-07_16:36:43", 
@@ -193,14 +193,14 @@
         }, 
         {
             "arch": "mipsle", 
-            "build_date": "2023-02-17_16:43:35", 
+            "build_date": "2023-12-07_07:51:54", 
             "description": "内网穿透利器，谁用谁知道。", 
             "home_url": "Module_frpc.asp", 
-            "md5": "7687facc77a97753d5ce4e47ad3d3ba3", 
+            "md5": "a8d523b32d19db47a16ced39164d2f5d", 
             "name": "frpc", 
             "tar_url": "frpc/frpc.tar.gz", 
             "title": "frpc穿透", 
-            "version": "2.2"
+            "version": "2.3"
         }, 
         {
             "arch": "mipsle", 
