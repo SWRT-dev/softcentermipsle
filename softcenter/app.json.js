@@ -267,6 +267,17 @@
         }, 
         {
             "arch": "mipsle", 
+            "build_date": "2024-02-25_22:06:34", 
+            "description": "光猫助手: 快速设置，通过路由直接访问猫后台", 
+            "home_url": "Module_lookcat.asp", 
+            "md5": "042f8aecd518fe8c79913d46358262ae", 
+            "name": "lookcat", 
+            "tar_url": "lookcat/lookcat.tar.gz", 
+            "title": "光猫助手", 
+            "version": "1.1"
+        }, 
+        {
+            "arch": "mipsle", 
             "build_date": "2023-02-17_22:58:57", 
             "description": "从路由器推送状态及通知的工具", 
             "home_url": "Module_serverchan.asp", 
