@@ -45,6 +45,17 @@
         }, 
         {
             "arch": "mipsle", 
+            "build_date": "2024-03-05_08:26:53", 
+            "description": "Socat 端口转发", 
+            "home_url": "Module_socat.asp", 
+            "md5": "5bfeb45d1517d2df8c26a1995e70d557", 
+            "name": "socat", 
+            "tar_url": "socat/socat.tar.gz", 
+            "title": "Socat端口转发", 
+            "version": "1.0"
+        }, 
+        {
+            "arch": "mipsle", 
             "build_date": "2023-01-08_12:54:44", 
             "description": "局域网网速测试工具", 
             "home_url": "Module_speedtest.asp", 
