@@ -365,7 +365,7 @@
         }
     ], 
     "home_url": "https://raw.githubusercontent.com/paldier/softcentermipsle/master", 
-    "md5": "a9ec0e255814559789d4cd0d1be6094e", 
+    "md5": "3848b5e6d7d9b53b5ef346a94b7df1a9", 
     "tar_url": "softcenter/softcenter.tar.gz", 
-    "version": "1.5.0"
+    "version": "1.5.1"
 }
