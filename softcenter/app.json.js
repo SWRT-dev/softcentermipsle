@@ -120,14 +120,14 @@
         }, 
         {
             "arch": "mipsle", 
-            "build_date": "2024-04-08_10:05:29", 
+            "build_date": "2024-05-08_21:00:42", 
             "description": "分布式的虚拟以太网", 
             "home_url": "Module_zerotier.asp", 
-            "md5": "87a1cd2961c47e32afc76625418871ec", 
+            "md5": "220c20ed709a822d6fdbb5750c3393e0", 
             "name": "zerotier", 
             "tar_url": "zerotier/zerotier.tar.gz", 
             "title": "zerotier", 
-            "version": "1.3"
+            "version": "1.4"
         }, 
         {
             "arch": "mipsle", 
