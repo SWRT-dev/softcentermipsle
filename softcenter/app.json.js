@@ -300,10 +300,10 @@
         }, 
         {
             "arch": "mipsle", 
-            "build_date": "2024-09-01_07:31:50", 
+            "build_date": "2024-09-01_08:13:37", 
             "description": "从路由器推送状态及通知的工具", 
             "home_url": "Module_serverchan.asp", 
-            "md5": "0695b1636dc0fd7f34353c9eeef8f214", 
+            "md5": "e80fb07d83aa9d705b3a56c24baaa412", 
             "name": "serverchan", 
             "tar_url": "serverchan/serverchan.tar.gz", 
             "title": "ServerChan微信推送", 
