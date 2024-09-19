@@ -1,9 +1,9 @@
 {
-"version":"0.0.6",
-"md5":"95e66209f83b04935dbeec9f4afab696",
+"version":"0.0.7",
+"md5":"ce0c77be63344021ea47405674493804",
 "arch":"mipsle",
 "home_url":"Module_tailscale.asp",
 "title":"tailscale",
 "description":"tailscale",
-"build_date":"2024-09-18_08:50:43"
+"build_date":"2024-09-19_11:43:05"
 }
