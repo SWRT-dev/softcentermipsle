@@ -1,9 +1,9 @@
 {
-"version":"1.1",
-"md5":"a3835f088e40c7428f94b26baed352d1",
+"version":"1.2",
+"md5":"7f5e9c2560e2595ee7d402b34b2011ea",
 "arch":"mipsle",
 "home_url":"Module_vnt.asp",
 "title":"vnt",
 "description":"简便高效的异地组网、内网穿透工具",
-"build_date":"2024-03-05_17:06:54"
+"build_date":"2024-10-30_11:14:29"
 }

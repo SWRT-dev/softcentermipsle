@@ -1,9 +1,9 @@
 {
-"version":"1.5",
-"md5":"521c971f249e435f45824da3f99fe19f",
+"version":"1.6",
+"md5":"1573c07bf4b12216cbbf49fa1b9d5d23",
 "arch":"mipsle",
 "home_url":"Module_zerotier.asp",
 "title":"zerotier",
 "description":"分布式的虚拟以太网",
-"build_date":"2024-05-09_11:15:36"
+"build_date":"2024-10-30_11:16:49"
 }

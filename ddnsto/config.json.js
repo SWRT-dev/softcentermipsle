@@ -1,9 +1,9 @@
 {
-"version":"3.0.2",
-"md5":"d8212e86009422b0ca2e7a67bdafa19a",
+"version":"3.0.3",
+"md5":"f36aaae3ab5207635be40c019afb01d0",
 "arch":"mipsle",
 "home_url":"Module_ddnsto.asp",
 "title":"DDNSTO远程控制",
 "description":"DDNSTO远程控制",
-"build_date":"2023-04-25_18:36:03"
+"build_date":"2024-10-25_23:08:49"
 }

@@ -1,9 +1,9 @@
 {
-"version":"1.9",
-"md5":"cb461951d798c9658812651c87a60034",
+"version":"2.0",
+"md5":"4c0c0753737c7a9ed130425ae6d00e32",
 "arch":"mipsle",
 "home_url":"Module_kms.asp",
 "title":"系统工具",
 "description":"kms",
-"build_date":"2022-07-23_13:07:50"
+"build_date":"2024-10-28_08:53:58"
 }
